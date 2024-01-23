@@ -8,6 +8,7 @@ parser.add_argument('-m', help='Git commit message')
 args = parser.parse_args()
 
 print(f"Input file: {args}")
+print(args.m)
 
 # PIPE = subprocess.PIPE
 
