@@ -13,7 +13,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag image
     - name: Another way of running the Script
-      run: docker run image python app.py -a "${{ secrets.API_KEY }}" -m "${{ github.event }}"
+      run: docker run image python app.py -a "${{ secrets.API_KEY }}" -m "${{ toJson(github.event) }}"
     - name: Print head git commit message
       run: |
         echo "$(git show -s --format=%s)" 
