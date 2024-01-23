@@ -14,3 +14,7 @@ jobs:
       run: docker build . --file Dockerfile --tag image
     - name: Another way of running the Script
       run: docker run image python app.py -a "${{ secrets.API_KEY }}"
+    - name: Print head git commit message
+      run: |
+        echo "$(git show -s --format=%s)" 
+        echo "${{ github.event.pull_request.head.sha }}"
