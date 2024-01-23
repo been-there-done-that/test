@@ -11,7 +11,7 @@ print(f"Input file: {args}")
 PIPE = subprocess.PIPE
 
 
-process = subprocess.Popen(['git', 'show', "-s", '--format=%s')], stdout=PIPE, stderr=PIPE)
+process = subprocess.Popen(['git', 'show', "-s", '--format=%s'], stdout=PIPE, stderr=PIPE)
 
 stdoutput, stderror =  process.communicate()
 
